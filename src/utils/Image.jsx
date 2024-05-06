@@ -29,110 +29,34 @@ import s2s17 from '../assets/images/greenquestclub/street2schools/street2schools
 
 
 
-const gqClubImages = [{
-  id: 1,
-  img: img1
-},
-{
-  id: 2,
-  img: img2
-},
-{
-  id: 3,
-  img: img3
-},
-{
-  id: 4,
-  img: img4
-},
-{
-  id: 5,
-  img: img5
-},
-{
-  id: 6,
-  img: img6
-},
-{
-  id: 7,
-  img: img7
-},
-{
-  id: 8,
-  img: img8
-},
-{
-  id: 9,
-  img: img9
-},
-{
-  id: 10,
-  img: img10
-},
-{
-  id: 11,
-  img: img11
-},]
-export const Image = () => {
-  const [show1, setShow1] = useState(false)
-  const [show2, setShow2] = useState(false)
+const gallery = [
+  {
+    title: 'Yaba',
+    image: img1
+  },
+  {
+    title: 'streeet2schools',
+    image: s2s12
+  }
+]
+const Image = ({title, id, display, details, gallery}) => {
 
   return (
     <div className='flex items-center mx-auto '>
-     {/* { gqClubImages.map((item) =>(
-      <div key={item.id} className=' px-12 gap-12 '>
-        <img src={item.img} className='p-4 w-12 h-12'/>
+     
+      <div className='px-12' key={id}> 
+      <div className='bg-gray-300 h-72 w-[250px] relative'>
+      <img src={display} className='h-64 w-56 pb-8 object-cover center' 
+      />
+      <img src={gallery.img1} className='h-64 w-56 pb-8 object-cover center' 
+      />
+      <h1 className='absolute bottom-4 left-[45%] font-RussoOne'>{title}</h1>
       </div>
-     ))} */}
+      </div>
     
-     <div className='px-12 '> 
-     <div className='bg-gray-300 h-72 w-[250px] relative'>
-     <img src={img1} className='h-64 w-56 pb-8 object-cover center' 
-     onClick={() => setShow1(!show1) }/>
-     <h1 className='absolute bottom-4 left-[45%] font-RussoOne'>Yaba</h1>
-     </div>
-       {show1 ? <div className='grid grid-cols-3 gap-4'>
-        <img src={img3} className='h-48 w-72 object-cover'/>
-        <img src={img4} className='h-48 w-72 object-cover'/>
-        <img src={img11} className='h-48 w-72 object-cover'/>
-        <img src={img6} className='h-48 w-72 object-cover'/>
-        <img src={img7} className='h-48 w-72 object-cover'/>
-        <img src={img8} className='h-48 w-72 object-cover'/>
-        <img src={img9} className='h-48 w-72 object-cover'/>
-        <img src={img10} className='h-48 w-72 object-cover'/>
-        <img src={img5} className='h-48 w-72 object-cover'/>
-       </div> : <div></div>} 
-
-       
-
-     </div>
-     <div className='bg-gray-300 h-72 w-[250px] relative'>
-     <img src={s2s12} className='h-64 w-56 pb-8 object-cover center' 
-     onClick={() => setShow2(!show2) }/>
-     <h1 className='absolute bottom-4 left-[45%] font-RussoOne'>Street2Schools</h1>
-     </div>
-       {show2 ? <div className='grid grid-cols-3 gap-4'>
-        <img src={s2s1} className='h-48 w-72 object-cover'/>
-        <img src={s2s2} className='h-48 w-72 object-cover'/>
-        <img src={s2s3} className='h-48 w-72 object-cover'/>
-        <img src={s2s4} className='h-48 w-72 object-cover'/>
-        <img src={s2s5} className='h-48 w-72 object-cover'/>
-        <img src={s2s6} className='h-48 w-72 object-cover'/>
-        <img src={s2s7} className='h-48 w-72 object-cover'/>
-        <img src={s2s10} className='h-48 w-72 object-cover'/>
-        <img src={s2s11} className='h-48 w-72 object-cover'/>
-        <img src={s2s12} className='h-48 w-72 object-cover'/>
-        <img src={s2s13} className='h-48 w-72 object-cover'/>
-        <img src={s2s14} className='h-48 w-72 object-cover'/>
-        <img src={s2s15} className='h-48 w-72 object-cover'/>
-        <img src={s2s16} className='h-48 w-72 object-cover'/>
-        <img src={s2s17} className='h-48 w-72 object-cover'/>
-
-       </div> : <div></div>} 
-
-       
-
      </div>
     
   )
 }
+
+export default Image 
